@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import Alert from './components/Alert';
 
-function App() {
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  height: 100vh;
+`
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledWrapper>
+        <Alert type="success" header="Basic alert title" caption="This is a message that displays a brief important message to the user."/>
+
+        <Alert type="warning" header="Basic alert title" caption="This is a message that displays a brief important message to the user."/>
+
+        <Alert type="error" header="Basic alert title" caption="This is a message that displays a brief important message to the user."/>
+
+        <Alert type="info" header="Basic alert title" caption="This is a message that displays a brief important message to the user."/>
+    </StyledWrapper>
   );
 }
 
