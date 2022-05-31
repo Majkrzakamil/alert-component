@@ -61,7 +61,6 @@ const StyledContent = styled.div`
   & p {
     margin: 0;
     font-size: 0.875em;
-    grid-column-start: 2;
   }
 `
 
