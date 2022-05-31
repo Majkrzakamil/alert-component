@@ -19,26 +19,6 @@ const StyledWrapper = styled.div`
 `
 
 const StyledIcon = styled.div`
-  ${({type}) => {
-    if(type === 'success') {
-      return `
-        background-color: #25A77B;
-    `
-    } else if(type === 'warning') {
-      return `
-        background-color: #FBAD37;
-    `
-    } else if(type === 'error') {
-      return `
-        background-color: #EE1C38;
-    `
-    } else {
-      return `
-        background-color: #223AD3;
-    `
-    }
-  }}
-
   width: 2rem;
   height: 2rem;
   border-radius: 0.5rem;
@@ -46,9 +26,25 @@ const StyledIcon = styled.div`
   justify-content: center;
   align-items: center;
 
+  &.icon--success {
+    background-color: #25A77B;
+  }
+
+  &.icon--warning {
+    background-color: #FBAD37;
+  }
+
+  &.icon--error {
+    background-color: #EE1C38;
+  }
+
+  &.icon--info {
+    background-color: #223AD3;
+  }
+
   & svg {
     max-width: 1rem;
-
+  
     & path {
       fill: #fff;
     }
@@ -84,7 +80,7 @@ const getIcon = (type) => {
 const Alert = ({header, caption, type}) => {
   return (
     <StyledWrapper>
-      <StyledIcon type={type}>
+      <StyledIcon type={type} className={`icon--${type}`}>
         <FontAwesomeIcon icon={getIcon(type)} />
       </StyledIcon>
       <StyledContent>
